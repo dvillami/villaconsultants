@@ -1,212 +1,731 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VillaConsultants — SAP consulting in asset management, maintenance and manufacturing.">
-  <title>VillaConsultants | SAP Consulting</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="VillaConsultants provides SAP consulting services in asset management, maintenance, manufacturing and procurement."
+  />
+  <title>VillaConsultants | SAP Consulting Services</title>
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    :root {
+      --teal: #1eb7c1;
+      --teal-light: #63d4da;
+      --yellow: #f2cf4a;
+      --navy: #20364f;
+      --slate: #50657d;
+      --light: #f5f7fa;
+      --white: #ffffff;
+      --border: #dbe3ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #233047;
-      line-height: 1.7;
-      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--navy);
+      line-height: 1.65;
+      background: var(--white);
     }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+    }
+
     header {
-      background: #0d2340;
-      color: white;
-      padding: 20px 8%;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
+      padding: 16px 0;
       flex-wrap: wrap;
-      gap: 16px;
     }
-    .brand { font-size: 23px; font-weight: bold; }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: 1.45rem;
+      color: var(--teal);
+    }
+
+    .brand-text span {
+      color: var(--slate);
+      font-size: 0.95rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     nav a {
-      color: white;
-      text-decoration: none;
-      margin-right: 18px;
-      font-size: 14px;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
     }
-    nav a:hover { color: #78cfe0; }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
     .hero {
-      background: linear-gradient(120deg, #0d2340, #176079);
+      background: linear-gradient(135deg, var(--navy) 0%, #2d5169 55%, var(--teal) 100%);
       color: white;
-      padding: 110px 8%;
+      padding: 70px 0;
     }
-    .hero h1 {
-      font-size: clamp(35px, 5vw, 58px);
-      max-width: 750px;
-      line-height: 1.15;
-      margin: 10px 0 24px;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 40px;
+      align-items: center;
     }
-    .hero p { max-width: 680px; }
+
     .eyebrow {
-      color: #9be4eb;
-      font-weight: bold;
-      letter-spacing: 2px;
-      font-size: 13px;
+      display: inline-block;
+      color: #d6fbff;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 18px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin-bottom: 18px;
+    }
+
+    .hero-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-list li {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.92rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
     .btn {
       display: inline-block;
-      padding: 13px 22px;
-      margin: 14px 12px 0 0;
-      border-radius: 5px;
-      background: #41b4c9;
-      color: #08203b;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
-    .btn-outline {
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: white;
       background: transparent;
-      color: white;
-      border: 1px solid white;
     }
-    section { padding: 75px 8%; }
-    h2 { font-size: 32px; color: #0d2340; }
-    .light { background: #f2f6fa; }
-    .grid {
+
+    .hero-side {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
+      gap: 18px;
+      justify-items: center;
     }
-    .card {
+
+    .hero-photo {
+      width: 320px;
+      max-width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-logo-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 16px;
+      width: 320px;
+      max-width: 100%;
+    }
+
+    .hero-logo-card img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin: 0 0 16px;
+      color: var(--navy);
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: var(--slate);
+      margin-bottom: 26px;
+    }
+
+    .light-section {
+      background: var(--light);
+    }
+
+    .about-grid,
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .about-box,
+    .info-card,
+    .card,
+    .logo-card {
       background: white;
-      padding: 25px;
-      border: 1px solid #e0e7ef;
-      border-radius: 9px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
     }
-    .card h3 { color: #176079; }
-    .contact {
-      background: #0d2340;
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .services-grid,
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 26px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--teal);
+      font-size: 1.15rem;
+    }
+
+    .sector-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .sector-tags span {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .logos-grid .logo-card {
+      text-align: center;
+      min-height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--slate);
+    }
+
+    .timeline-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+      color: var(--navy);
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--slate);
+    }
+
+    .clearance {
+      margin-top: 22px;
+      border-left: 5px solid var(--yellow);
+      background: #fffdf6;
+      padding: 16px 18px;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .contact-section {
+      background: var(--navy);
       color: white;
-      text-align: center;
     }
-    .contact h2 { color: white; }
+
+    .contact-section h2,
+    .contact-section .section-intro {
+      color: white;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-actions a {
+      color: inherit;
+    }
+
     footer {
-      background: #08182e;
-      color: #d9e1ea;
+      background: #172737;
+      color: #d8e3ea;
       text-align: center;
-      padding: 22px;
-      font-size: 13px;
+      padding: 20px;
+      font-size: 0.92rem;
     }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 56px 0;
+      }
+
+      .hero-side {
+        justify-items: start;
+      }
+    }
+
     @media (max-width: 600px) {
-      header, section { padding-left: 6%; padding-right: 6%; }
-      .hero { padding: 75px 6%; }
-      nav a { display: inline-block; margin-bottom: 8px; }
+      .container {
+        width: 92%;
+      }
+
+      .navbar {
+        padding: 14px 0;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-photo,
+      .hero-logo-card {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="brand">VillaConsultants</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="hero">
-    <div class="eyebrow">SAP CONSULTING & ENGINEERING</div>
-    <h1>Connecting SAP Technology with Industrial Excellence.</h1>
-    <p>
-      VillaConsultants helps organizations improve asset
-      management, maintenance and manufacturing processes
-      through practical SAP solutions.
-    </p>
-    <a class="btn" href="#contact">Let's Work Together</a>
-    <a class="btn btn-outline" href="#services">Explore Services</a>
-  </div>
-
-  <section id="about">
-    <h2>About VillaConsultants</h2>
-    <p>
-      Led by Daniel Villamizar, M.Eng., PMP, VillaConsultants
-      brings over 15 years of SAP consulting experience,
-      combined with a strong background in mechanical
-      engineering, industrial maintenance and project management.
-    </p>
-    <p>
-      Our expertise includes SAP S/4HANA and ECC,
-      with experience across manufacturing, mining,
-      transportation and public-sector environments.
-    </p>
-  </section>
-
-  <section id="services" class="light">
-    <h2>Our Expertise</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>SAP Asset Management</h3>
-        <p>SAP PM, equipment maintenance, preventive maintenance,
-        asset management and reliability processes.</p>
+  <header>
+    <div class="container navbar">
+      <div class="brand">
+        <img src="images/villa-logo-icon.png" alt="VillaConsultants logo icon" />
+        <div class="brand-text">
+          <strong>Villa</strong>
+          <span>Consultants</span>
+        </div>
       </div>
-      <div class="card">
-        <h3>SAP Manufacturing</h3>
-        <p>SAP PP, production planning, MRP and integration
-        between manufacturing, maintenance and materials.</p>
-      </div>
-      <div class="card">
-        <h3>SAP Implementation</h3>
-        <p>SAP ECC and S/4HANA implementation, rollout,
-        integration, testing and data migration.</p>
-      </div>
-      <div class="card">
-        <h3>Project Leadership</h3>
-        <p>Business process optimization, workshops,
-        cross-functional coordination and deployment support.</p>
-      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#clients">Clients</a>
+        <a href="#industries">Industries</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
-    <p>
-      Daniel has contributed to SAP transformation projects
-      across manufacturing, transportation, mining and
-      public-sector organizations in Canada and internationally.
-    </p>
-    <p>
-      Experience includes SAP PM, PP, MM and CS,
-      process integration, functional configuration,
-      testing, training and production support.
-    </p>
-    <h3>Selected SAP Certifications</h3>
-    <p>
-      SAP S/4HANA Asset Management<br>
-      SAP S/4HANA Production Planning and Manufacturing<br>
-      SAP S/4HANA Cloud Private Edition, Sourcing and Procurement
-    </p>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">VillaConsultants · Montreal · 5 Years</div>
+          <h1>SAP consulting with strong industrial and operational experience.</h1>
+          <p>
+            VillaConsultants is a Montreal-based SAP consulting company led by
+            Daniel Villamizar, M.Eng., PMP. We support organizations in asset
+            management, maintenance, manufacturing and procurement by combining
+            practical SAP expertise with real knowledge of industrial operations.
+          </p>
+          <p>
+            Daniel brings 15+ years of SAP experience across SAP PM, PP, MM and CS,
+            with work delivered in manufacturing, mining, rail transportation and
+            public-sector environments.
+          </p>
 
-  <section id="contact" class="contact">
-    <h2>Let's Connect</h2>
-    <p>
-      Looking for support with an SAP implementation,
-      transformation project or consulting engagement?
-    </p>
-    <a class="btn" href="mailto:davg@outlook.com">Contact VillaConsultants</a>
-    <a class="btn btn-outline"
-       href="https://www.linkedin.com/in/dvillami/"
-       target="_blank" rel="noopener noreferrer">
-      LinkedIn Profile
-    </a>
-  </section>
-</main>
+          <ul class="hero-list">
+            <li>SAP S/4HANA</li>
+            <li>SAP PM</li>
+            <li>SAP PP</li>
+            <li>SAP MM</li>
+            <li>Montreal, Canada</li>
+          </ul>
 
-<footer>
-  © 2026 VillaConsultants. SAP Consulting & Engineering Services.
-</footer>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#contact">Book a Consultation</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/dvillami/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          </div>
+        </div>
 
+        <div class="hero-side">
+          <div class="hero-photo">
+            <img src="images/daniel.jpg" alt="Daniel Villamizar portrait" />
+          </div>
+
+          <div class="hero-logo-card">
+            <img src="images/villa-logo-full.png" alt="VillaConsultants full logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-box">
+          <h2>About Daniel Villamizar</h2>
+          <p>
+            Daniel Villamizar is a Senior SAP Consultant and engineering
+            professional based in Montreal. He has more than 15 years of
+            experience delivering SAP solutions and more than a decade of
+            additional experience in maintenance, reliability, asset management
+            and process optimization.
+          </p>
+          <p>
+            His background combines SAP functional consulting with real
+            industrial knowledge, which helps bridge the gap between system
+            design and business operations. He has contributed to implementation,
+            rollout, support, integration, testing, training and continuous
+            improvement initiatives across multiple sectors.
+          </p>
+          <p>
+            Through VillaConsultants, Daniel supports organizations looking for
+            a practical consultant who understands both enterprise systems and
+            operational realities on the ground.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h2>Quick Profile</h2>
+          <div class="stats">
+            <div class="stat">
+              <strong>15+</strong>
+              Years in SAP
+            </div>
+            <div class="stat">
+              <strong>5</strong>
+              Years in Montreal
+            </div>
+            <div class="stat">
+              <strong>4</strong>
+              Core SAP Modules
+            </div>
+            <div class="stat">
+              <strong>3</strong>
+              Languages
+            </div>
+          </div>
+
+          <div class="clearance">
+            <strong>Security Clearance:</strong><br />
+            Government of Canada security clearance – <strong>Secret</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="light-section">
+      <div class="container">
+        <h2>Core Expertise</h2>
+        <p class="section-intro">
+          VillaConsultants supports SAP projects with a focus on business value,
+          cross-functional integration and practical execution.
+        </p>
+
+        <div class="services-grid">
+          <div class="card">
+            <h3>SAP Asset Management</h3>
+            <p>
+              SAP PM configuration, preventive and corrective maintenance,
+              equipment and functional locations, maintenance plans, reliability
+              processes and asset performance support.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>SAP Manufacturing</h3>
+            <p>
+              SAP PP, MRP, production planning, process alignment and integration
+              between shop-floor operations, maintenance and materials.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>SAP Procurement & Materials</h3>
+            <p>
+              SAP MM, sourcing and procurement support, inventory-related
+              processes, master data, purchasing flows and integration with plant
+              maintenance activities.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Implementation & Delivery</h3>
+            <p>
+              ECC and S/4HANA implementations, rollouts, fit-gap analysis,
+              workshops, testing, data migration, user training and hypercare.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clients">
+      <div class="container">
+        <h2>Selected Clients & Companies</h2>
+        <p class="section-intro">
+          Daniel has contributed to projects and initiatives involving the
+          following organizations.
+        </p>
+
+        <div class="logos-grid">
+          <div class="logo-card">Yoplait Liberté</div>
+          <div class="logo-card">Building Products of Canada</div>
+          <div class="logo-card">SAAQ</div>
+          <div class="logo-card">STM</div>
+          <div class="logo-card">Glencore</div>
+          <div class="logo-card">Foliot</div>
+          <div class="logo-card">Saputo</div>
+          <div class="logo-card">Canadian National</div>
+          <div class="logo-card">Cascades</div>
+          <div class="logo-card">Coca-Cola</div>
+        </div>
+
+        <p style="margin-top: 18px; color: var(--slate);">
+          If you want, later we can replace these text blocks with the real company logos.
+        </p>
+      </div>
+    </section>
+
+    <section id="industries" class="light-section">
+      <div class="container">
+        <h2>Industries Served</h2>
+        <p class="section-intro">
+          Experience across several industrial and operational environments has
+          helped Daniel understand different business realities and adapt SAP
+          solutions accordingly.
+        </p>
+
+        <div class="sector-tags">
+          <span>Manufacturing</span>
+          <span>Mining</span>
+          <span>Rail Transportation</span>
+          <span>Public Sector</span>
+          <span>Food & Beverages</span>
+          <span>Industrial Maintenance</span>
+          <span>Asset-Intensive Operations</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container two-col">
+        <div>
+          <h2>Selected Experience</h2>
+
+          <div class="timeline-item">
+            <h3>SAP Manufacturing Lead PP-PM-QM · Yoplait Liberté / Accenture</h3>
+            <p>
+              Leading SAP manufacturing workstreams in a rollout environment,
+              supporting production, maintenance and quality functions.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Production Planning Lead · Building Products of Canada</h3>
+            <p>
+              Worked on production planning rollout activities, workshops,
+              configuration, testing, data migration and training.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Senior Plant Maintenance Consultant · SAAQ / LGS</h3>
+            <p>
+              Supported SAP PM configuration, custom solutions, Fiori
+              applications, data conversion and end-user training in a large
+              public-sector context.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>SAP Integrator PP / PM / MM · STM / Beyond Technologies</h3>
+            <p>
+              Contributed to integration of maintenance, materials and logistics
+              processes, including testing and post-go-live support.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>SAP PM Consultant · Saputo / IBM Canada</h3>
+            <p>
+              Participated in a greenfield SAP implementation with PM and PP
+              scope across multiple international locations.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h2>Credentials</h2>
+          <p><strong>Education</strong></p>
+          <p>
+            M.Sc. in Engineering Management<br />
+            Université de Sherbrooke
+          </p>
+
+          <p><strong>Professional Credentials</strong></p>
+          <p>
+            M.Eng. · PMP<br />
+            Engineer, Order of Engineers of Quebec<br />
+            Six Sigma Green Belt
+          </p>
+
+          <p><strong>SAP Certifications</strong></p>
+          <p>
+            SAP S/4HANA Asset Management<br />
+            SAP S/4HANA Production Planning and Manufacturing<br />
+            SAP S/4HANA Cloud Private Edition, Sourcing and Procurement
+          </p>
+
+          <p><strong>Languages</strong></p>
+          <p>English · French · Spanish</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Let’s Connect</h2>
+        <p class="section-intro">
+          If your organization is looking for support in SAP implementation,
+          optimization or operational transformation, VillaConsultants would be
+          happy to connect.
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:davg@outlook.com">Email Daniel</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/dvillami/" target="_blank" rel="noopener noreferrer">Visit LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 VillaConsultants · Montreal, Canada · SAP Consulting Services
+  </footer>
 </body>
 </html>
