@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VillaConsultants — SAP consulting in asset management, maintenance and manufacturing.">
+  <title>VillaConsultants | SAP Consulting</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #233047;
+      line-height: 1.7;
+      background: #fff;
+    }
+    header {
+      background: #0d2340;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand { font-size: 23px; font-weight: bold; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 18px;
+      font-size: 14px;
+    }
+    nav a:hover { color: #78cfe0; }
+    .hero {
+      background: linear-gradient(120deg, #0d2340, #176079);
+      color: white;
+      padding: 110px 8%;
+    }
+    .hero h1 {
+      font-size: clamp(35px, 5vw, 58px);
+      max-width: 750px;
+      line-height: 1.15;
+      margin: 10px 0 24px;
+    }
+    .hero p { max-width: 680px; }
+    .eyebrow {
+      color: #9be4eb;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      margin: 14px 12px 0 0;
+      border-radius: 5px;
+      background: #41b4c9;
+      color: #08203b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+    }
+    section { padding: 75px 8%; }
+    h2 { font-size: 32px; color: #0d2340; }
+    .light { background: #f2f6fa; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border: 1px solid #e0e7ef;
+      border-radius: 9px;
+    }
+    .card h3 { color: #176079; }
+    .contact {
+      background: #0d2340;
+      color: white;
+      text-align: center;
+    }
+    .contact h2 { color: white; }
+    footer {
+      background: #08182e;
+      color: #d9e1ea;
+      text-align: center;
+      padding: 22px;
+      font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      header, section { padding-left: 6%; padding-right: 6%; }
+      .hero { padding: 75px 6%; }
+      nav a { display: inline-block; margin-bottom: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand">VillaConsultants</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">SAP CONSULTING & ENGINEERING</div>
+    <h1>Connecting SAP Technology with Industrial Excellence.</h1>
+    <p>
+      VillaConsultants helps organizations improve asset
+      management, maintenance and manufacturing processes
+      through practical SAP solutions.
+    </p>
+    <a class="btn" href="#contact">Let's Work Together</a>
+    <a class="btn btn-outline" href="#services">Explore Services</a>
+  </div>
+
+  <section id="about">
+    <h2>About VillaConsultants</h2>
+    <p>
+      Led by Daniel Villamizar, M.Eng., PMP, VillaConsultants
+      brings over 15 years of SAP consulting experience,
+      combined with a strong background in mechanical
+      engineering, industrial maintenance and project management.
+    </p>
+    <p>
+      Our expertise includes SAP S/4HANA and ECC,
+      with experience across manufacturing, mining,
+      transportation and public-sector environments.
+    </p>
+  </section>
+
+  <section id="services" class="light">
+    <h2>Our Expertise</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>SAP Asset Management</h3>
+        <p>SAP PM, equipment maintenance, preventive maintenance,
+        asset management and reliability processes.</p>
+      </div>
+      <div class="card">
+        <h3>SAP Manufacturing</h3>
+        <p>SAP PP, production planning, MRP and integration
+        between manufacturing, maintenance and materials.</p>
+      </div>
+      <div class="card">
+        <h3>SAP Implementation</h3>
+        <p>SAP ECC and S/4HANA implementation, rollout,
+        integration, testing and data migration.</p>
+      </div>
+      <div class="card">
+        <h3>Project Leadership</h3>
+        <p>Business process optimization, workshops,
+        cross-functional coordination and deployment support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <p>
+      Daniel has contributed to SAP transformation projects
+      across manufacturing, transportation, mining and
+      public-sector organizations in Canada and internationally.
+    </p>
+    <p>
+      Experience includes SAP PM, PP, MM and CS,
+      process integration, functional configuration,
+      testing, training and production support.
+    </p>
+    <h3>Selected SAP Certifications</h3>
+    <p>
+      SAP S/4HANA Asset Management<br>
+      SAP S/4HANA Production Planning and Manufacturing<br>
+      SAP S/4HANA Cloud Private Edition, Sourcing and Procurement
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let's Connect</h2>
+    <p>
+      Looking for support with an SAP implementation,
+      transformation project or consulting engagement?
+    </p>
+    <a class="btn" href="mailto:davg@outlook.com">Contact VillaConsultants</a>
+    <a class="btn btn-outline"
+       href="https://www.linkedin.com/in/dvillami/"
+       target="_blank" rel="noopener noreferrer">
+      LinkedIn Profile
+    </a>
+  </section>
+</main>
+
+<footer>
+  © 2026 VillaConsultants. SAP Consulting & Engineering Services.
+</footer>
+
+</body>
+</html>
